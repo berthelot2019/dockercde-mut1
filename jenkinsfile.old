@@ -5,13 +5,8 @@ pipeline {
         stage('Checkout') {
             when { changeRequest() }
             steps {
-                echo 'Step1'
+                echo 'Steps'
                 sh 'printenv'
-            }
-        }
-        stage('Build image') {
-            steps {
-                echo 'Building image'
             }
         }
     }
