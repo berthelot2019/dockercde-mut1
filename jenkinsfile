@@ -1,0 +1,18 @@
+pipeline {
+    agent node1
+
+    stages {
+        stage('Checkout') {
+            when { changeRequest() }
+            steps {
+                echo 'Step1'
+                sh 'printenv'
+            }
+        }
+        stage('Build image') {
+            steps {
+                echo 'Building image'
+            }
+        }
+    }
+}
